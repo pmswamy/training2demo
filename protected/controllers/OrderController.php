@@ -89,7 +89,7 @@ class OrderController extends Controller
 				$message->subject="Your order details";
 				$message->setBody($str);
 				$message->addTo(Yii::app()->user->name);
-				$message->from=$costomerModel->customer_email;
+				$message->from=$customerModel->customer_email;
 				Yii::app()->mail->send($message);
 				$this->redirect(array('view','id'=>$model->order_id));
 			
