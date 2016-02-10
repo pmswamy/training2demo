@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.yii-mail.YiiMailMessage',
 	),
 
 	'modules'=>array(
@@ -73,6 +74,18 @@ return array(
 				*/
 			),
 		),
+
+			'mail' =>array(
+					'class' =>'ext.yii-mail.YiiMail',
+					'transportType'=>'smtp',
+					'transportOptions'=>array(
+							'host'=>'smtp.gmail.com',
+							'encryption'=>'ssl', // use ssl
+							'username'=>'dev.loyalla@gmail.com',
+							'password'=>'Welcome1@3',
+							'port'=>465, // ssl port for gmail
+					),
+					'viewPath'=>'application.views.mail'
 
 	),
 
