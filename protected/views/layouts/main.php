@@ -27,10 +27,14 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
+		<?php	$admin="pms@gmail.com"; 
+		
+				$this->widget('zii.widgets.CMenu',array(
+					'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Customer Registration', 'url'=>array('/customer/create'),'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'view product', 'url'=>array('/product/index'),'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Add product', 'url'=>array('product/create'),'visible'=>(Yii::app()->user->name)===$admin),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
