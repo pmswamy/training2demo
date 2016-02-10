@@ -87,12 +87,12 @@ return array(
 					),
 					'viewPath'=>'application.views.mail'
 
-	),
+				),
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
-	),
-);
+		'adminEmail'=>'webmaster@example.com'),
+    ),
+		);

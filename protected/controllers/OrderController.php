@@ -60,13 +60,13 @@ class OrderController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		
 
 		if(!empty($id)&& !Yii::app()->user->isGuest)
 		{
-			$customer_email=Yii::app()->user-name;
+			$customer_email=Yii::app()->user->name;
 			$customerModel=Customer::model()->findByAttributes(array('customer_email'=>$customer_email));
 			
 			$productId=$id;
@@ -74,7 +74,7 @@ class OrderController extends Controller
 			
 			$model= new Order();
 			$model->order_product_id=$productModel->product_id;
-			$model->order_customer_id=$productModelr->customer_id;
+			$model->order_customer_id=$customerModel->customer_id;
 			$model->order_amount=$productModel->product_price+$productModel->product_shipping_price;
 			if ($model->save())
 			{
@@ -83,7 +83,7 @@ class OrderController extends Controller
 				$str="Product Name:{$productModel->product_name}\r\n".
 						"Order Id:{$attribuits->order_id}\r\n".
 						"Order Product Id:{$attribuits->order_product_id}\r\n".
-						"Order Customer Id:{$attribuits->order_custmer_id}\r\n".
+						"Order Customer Id:{$attribuits->order_customer_id}\r\n".
 						"Total Amount With Shipping Charges:{$attribuits->order_amount}\r\n";
 				$message=new YiiMailMessage();
 				$message->subject="Your order details";
@@ -93,15 +93,12 @@ class OrderController extends Controller
 				Yii::app()->mail->send($message);
 				$this->redirect(array('view','id'=>$model->order_id));
 			
-			}
-			
-		}
-	
+			 }
 		else {
 			echo "booking failed";
+			}
 		}
 	}
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

@@ -20,6 +20,7 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('product_shipping_price')); ?>:</b>
 	<?php echo CHtml::encode($data->product_shipping_price); ?>
 	<br />
+  
   <?php echo CHtml::link('click order this product',array('order/create','id'=>$data->product_id));?>
 
 </div>
