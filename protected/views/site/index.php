@@ -4,15 +4,16 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+<h4><p>Training statement 2 for trainee  </p></h4>
+<p>Build a web application using Yii framework having the below mentioned functionality:</p>
+<ol>
+	<li>Accept customer registrations and create customer accounts.</li>
+	<li> Only Admin should have access to create/delete/update products, customers should have only view access.</li>
+	<li> Customers can view all products.</li>
+	<li> Customer can buy a product.</li>
+	<li>Send an email to customer email id with the order details.</li>
+	<li>Customer can view his orders.</li>
+</ol>
 
 <p>For more details on how to further develop this application, please read
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
