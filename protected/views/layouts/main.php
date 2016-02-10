@@ -34,6 +34,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Customer Registration', 'url'=>array('/customer/create'),'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'view product', 'url'=>array('/product/index'),'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'view Ordered product', 'url'=>array('/order/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Add product', 'url'=>array('product/create'),'visible'=>(Yii::app()->user->name)===$admin),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
